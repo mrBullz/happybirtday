@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -1045,8 +1045,8 @@
       }
 
       .mini-board {
-        height: 54vh;
-        min-height: 420px;
+        height: 48vh;
+        min-height: 360px;
       }
 
       .mini-shot.hero {
@@ -1175,13 +1175,81 @@
         right: 12px;
       }
     }
+
+    @media (max-width: 640px) {
+      .nav {
+        display: none;
+      }
+
+      .dots {
+        bottom: 14px;
+        gap: 6px;
+        max-width: calc(100vw - 32px);
+        overflow: hidden;
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+      }
+
+      .dot.active {
+        width: 20px;
+      }
+
+      .slide-inner,
+      .cover-content,
+      .final-content,
+      .choice-inner {
+        width: min(100% - 24px, 720px);
+        margin: 18px auto;
+      }
+
+      .mini-board {
+        height: 44vh;
+        min-height: 330px;
+      }
+
+      .mini-shot.hero {
+        top: 4%;
+        right: 4%;
+        width: 78%;
+        height: 48%;
+      }
+
+      .mini-shot.a {
+        left: 5%;
+        top: 39%;
+        width: 40%;
+      }
+
+      .mini-shot.b {
+        right: 5%;
+        bottom: 5%;
+        width: 40%;
+      }
+
+      .mini-shot.c {
+        left: 34%;
+        bottom: 8%;
+        width: 34%;
+      }
+
+      .mini-note {
+        left: 5%;
+        bottom: 5%;
+        max-width: 180px;
+        padding: 12px 13px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="deck" aria-label="Презентация: идеи для празднования 30-летия">
     <div class="track" id="track">
       <section class="slide cover is-active" data-accent="#0066ff" aria-label="Обложка">
-        <img class="cover-image" src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=1920&q=80" alt="Самолет над городом">
+        <img loading="lazy" decoding="async" class="cover-image" src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=1920&q=80" alt="Самолет над городом">
         <div class="cover-content">
           <div class="eyebrow">Подборка впечатлений на день рождения</div>
           <h1>Идеи для празднования 30-летия</h1>
@@ -1219,10 +1287,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: романтика в Грузии">
-            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=1200&q=82" alt="Горы Грузии"><figcaption>горы в тумане · терраса</figcaption></figure>
-            <figure class="mini-shot a" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1737122175352-1e9616909ea2?w=700&q=80" alt="Атмосферный горный кадр"><figcaption>утренний кофе</figcaption></figure>
-            <figure class="mini-shot b" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1733551630056-098837789d62?w=700&q=80" alt="Горный пейзаж"><figcaption>плед · свечи</figcaption></figure>
-            <figure class="mini-shot c" style="--r: -2deg"><img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Путешествие в мягком свете"><figcaption>ужин на природе</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: 1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=1200&q=82" alt="Горы Грузии"><figcaption>горы в тумане · терраса</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1737122175352-1e9616909ea2?w=700&q=80" alt="Атмосферный горный кадр"><figcaption>утренний кофе</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1733551630056-098837789d62?w=700&q=80" alt="Горный пейзаж"><figcaption>плед · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Путешествие в мягком свете"><figcaption>ужин на природе</figcaption></figure>
             <div class="mini-stamp">Медленный люкс</div>
             <div class="mini-note"><strong>TBS · +18°</strong>вино вечером, камин и телефоны в авиарежиме</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1253,10 +1321,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: Москва и спа">
-            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=1200&q=82" alt="Панорама Москвы"><figcaption>панорама · окна в пол</figcaption></figure>
-            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1669793705868-14f2e3ef8d84?w=700&q=80" alt="Городской свет Москвы"><figcaption>вечерний город</figcaption></figure>
-            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1762242376052-d82f0bea4dfd?w=700&q=80" alt="Люксовый интерьер"><figcaption>мрамор · спа</figcaption></figure>
-            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=700&q=80" alt="Городское путешествие"><figcaption>завтрак с шампанским</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=1200&q=82" alt="Панорама Москвы"><figcaption>панорама · окна в пол</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1669793705868-14f2e3ef8d84?w=700&q=80" alt="Городской свет Москвы"><figcaption>вечерний город</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1762242376052-d82f0bea4dfd?w=700&q=80" alt="Люксовый интерьер"><figcaption>мрамор · спа</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=700&q=80" alt="Городское путешествие"><figcaption>завтрак с шампанским</figcaption></figure>
             <div class="mini-stamp">Городской побег</div>
             <div class="mini-note"><strong>MOW · 5 звезд</strong>поздний выезд, тихий спа и ресторан после заката</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1287,10 +1355,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: Турция">
-            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=1200&q=82" alt="Закат у воды"><figcaption>ужин на закате · море</figcaption></figure>
-            <figure class="mini-shot a" style="--r: -5deg"><img src="https://images.unsplash.com/photo-1706349441547-baac3bd220a5?w=700&q=80" alt="Турецкий берег"><figcaption>яхта · соленый воздух</figcaption></figure>
-            <figure class="mini-shot b" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1754658531993-66add0b893c4?w=700&q=80" alt="Теплый вечер"><figcaption>лён · свечи</figcaption></figure>
-            <figure class="mini-shot c" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Полет над водой"><figcaption>рассвет · Каппадокия</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: 1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=1200&q=82" alt="Закат у воды"><figcaption>ужин на закате · море</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -5deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1706349441547-baac3bd220a5?w=700&q=80" alt="Турецкий берег"><figcaption>яхта · соленый воздух</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1754658531993-66add0b893c4?w=700&q=80" alt="Теплый вечер"><figcaption>лён · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Полет над водой"><figcaption>рассвет · Каппадокия</figcaption></figure>
             <div class="mini-stamp">Тёплая свобода</div>
             <div class="mini-note"><strong>AYT · +27°</strong>пляжный клуб, закат и ужин при свечах</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1321,10 +1389,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: поездка по России">
-            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=1200&q=82" alt="Поезд в пути"><figcaption>поезд · старые станции</figcaption></figure>
-            <figure class="mini-shot a" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1705775299869-600da44da8ff?w=700&q=80" alt="Деталь дороги"><figcaption>чай в дороге</figcaption></figure>
-            <figure class="mini-shot b" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1691583224443-1fefd0afaa51?w=700&q=80" alt="Российская природа"><figcaption>лес · северный воздух</figcaption></figure>
-            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Окно и интерьер"><figcaption>винтажный блокнот</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=1200&q=82" alt="Поезд в пути"><figcaption>поезд · старые станции</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1705775299869-600da44da8ff?w=700&q=80" alt="Деталь дороги"><figcaption>чай в дороге</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1691583224443-1fefd0afaa51?w=700&q=80" alt="Российская природа"><figcaption>лес · северный воздух</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Окно и интерьер"><figcaption>винтажный блокнот</figcaption></figure>
             <div class="mini-stamp">Путешествие</div>
             <div class="mini-note"><strong>RUS · уикенд</strong>город, дорога, природа и ужин в новом месте</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1355,10 +1423,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: Узбекистан">
-            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=1200&q=82" alt="Восточная мозаика"><figcaption>мозаика · арки</figcaption></figure>
-            <figure class="mini-shot a" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1630245935603-a409cfaa97e4?w=700&q=80" alt="Архитектура Узбекистана"><figcaption>чай · ткани</figcaption></figure>
-            <figure class="mini-shot b" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Орнаментальная деталь"><figcaption>золотые орнаменты</figcaption></figure>
-            <figure class="mini-shot c" style="--r: -2deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Закатный свет"><figcaption>закатные улицы</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: 1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=1200&q=82" alt="Восточная мозаика"><figcaption>мозаика · арки</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1630245935603-a409cfaa97e4?w=700&q=80" alt="Архитектура Узбекистана"><figcaption>чай · ткани</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Орнаментальная деталь"><figcaption>золотые орнаменты</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Закатный свет"><figcaption>закатные улицы</figcaption></figure>
             <div class="mini-stamp">Восточный сон</div>
             <div class="mini-note"><strong>SKD · золотой час</strong>рынки, тени и настроение Шёлкового пути</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1389,10 +1457,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: Тай и Вьетнам">
-            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=1200&q=82" alt="Неоновая улица"><figcaption>неон · ночная энергия</figcaption></figure>
-            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1549375463-8cbc18ca3f24?w=700&q=80" alt="Тропическая улица"><figcaption>скутеры · уличная еда</figcaption></figure>
-            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1774703699594-24267a0db2fe?w=700&q=80" alt="Пляжная атмосфера"><figcaption>пальмы · море</figcaption></figure>
-            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний город"><figcaption>коктейли на крыше</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=1200&q=82" alt="Неоновая улица"><figcaption>неон · ночная энергия</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1549375463-8cbc18ca3f24?w=700&q=80" alt="Тропическая улица"><figcaption>скутеры · уличная еда</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1774703699594-24267a0db2fe?w=700&q=80" alt="Пляжная атмосфера"><figcaption>пальмы · море</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний город"><figcaption>коктейли на крыше</figcaption></figure>
             <div class="mini-stamp">Неоновое приключение</div>
             <div class="mini-note"><strong>BKK · +29°</strong>хаос, свобода, теплый дождь и город без сна</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1423,10 +1491,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: Подмосковье">
-            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=1200&q=82" alt="Дом с панорамным окном"><figcaption>панорамное окно · лес</figcaption></figure>
-            <figure class="mini-shot a" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1769256050030-e30bfc946d83?w=700&q=80" alt="Минималистичный интерьер"><figcaption>дерево · минимализм</figcaption></figure>
-            <figure class="mini-shot b" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1773994788518-31be9cf58f3c?w=700&q=80" alt="Уютный эко-отель"><figcaption>баня · свечи</figcaption></figure>
-            <figure class="mini-shot c" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Природа и тихий дом"><figcaption>чай · книги</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: 1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=1200&q=82" alt="Дом с панорамным окном"><figcaption>панорамное окно · лес</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1769256050030-e30bfc946d83?w=700&q=80" alt="Минималистичный интерьер"><figcaption>дерево · минимализм</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1773994788518-31be9cf58f3c?w=700&q=80" alt="Уютный эко-отель"><figcaption>баня · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Природа и тихий дом"><figcaption>чай · книги</figcaption></figure>
             <div class="mini-stamp">Тихий люкс</div>
             <div class="mini-note"><strong>MO · без перелёта</strong>лесной воздух, чан в 22:00 и тишина</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1462,10 +1530,10 @@
             </div>
           </div>
           <div class="mini-board" aria-label="Мудборд: вечеринка в особняке">
-            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=1200&q=82" alt="Вечеринка у особняка"><figcaption>особняк · гирлянды</figcaption></figure>
-            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1672189448776-28d8bea275bf?w=700&q=80" alt="Атмосфера вечеринки"><figcaption>длинный стол · свечи</figcaption></figure>
-            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1764269719300-7094d6c00533?w=700&q=80" alt="Свет и танцы"><figcaption>диджей · диско-свет</figcaption></figure>
-            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний люкс"><figcaption>шампанское · бархат</figcaption></figure>
+            <figure class="mini-shot hero" style="--r: -1deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=1200&q=82" alt="Вечеринка у особняка"><figcaption>особняк · гирлянды</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1672189448776-28d8bea275bf?w=700&q=80" alt="Атмосфера вечеринки"><figcaption>длинный стол · свечи</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1764269719300-7094d6c00533?w=700&q=80" alt="Свет и танцы"><figcaption>диджей · диско-свет</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний люкс"><figcaption>шампанское · бархат</figcaption></figure>
             <div class="mini-stamp">Запомнить ночь</div>
             <div class="mini-note"><strong>MSK · 20:00</strong>дресс-код, диджей-сет и вечер как фильм</div>
             <span class="mini-tape one"></span><span class="mini-tape two"></span>
@@ -1473,312 +1541,8 @@
         </div>
       </section>
 
-      <section class="slide moodboard" style="--accent: #00c896; --board-bg: #f4efe5" data-accent="#00c896" aria-label="Moodboard: Грузия">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 01</div>
-            <h2>Грузия: романтика</h2>
-            <p>Медленное утро в горах, вино, камин и ощущение близости.</p>
-            <div class="board-meta">
-              <span class="meta-chip">41.7151° N, 44.8271° E</span>
-              <span class="meta-chip">+18° · туман</span>
-              <span class="meta-chip">2 ночи</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: 1deg">
-              <img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=1400&q=82" alt="Горы Грузии в мягком свете">
-              <figcaption class="caption">Горы в тумане · деревянная терраса</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: -4deg">
-              <img src="https://images.unsplash.com/photo-1737122175352-1e9616909ea2?w=700&q=80" alt="Атмосферный вид Грузии">
-              <figcaption class="caption">утренний кофе</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: 3deg">
-              <img src="https://images.unsplash.com/photo-1733551630056-098837789d62?w=700&q=80" alt="Горный пейзаж">
-              <figcaption class="caption">плед · свечи · камин</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: -2deg">
-              <img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Теплый кадр путешествия">
-              <figcaption class="caption">ужин на природе</figcaption>
-            </figure>
-            <div class="stamp">Медленный люкс</div>
-            <div class="note"><strong>Режим</strong>телефоны в авиарежим, длинный завтрак, вино вечером</div>
-            <div class="boarding"><span><strong>TBS</strong>побег в Грузию</span><span>1 ч 45 мин</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard" style="--accent: #0066ff; --board-bg: #eef3fb" data-accent="#0066ff" aria-label="Moodboard: Москва и спа">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 02</div>
-            <h2>Москва + спа</h2>
-            <p>Премиальный городской побег: мрамор, панорамные окна и ужин с видом.</p>
-            <div class="board-meta">
-              <span class="meta-chip">55.7558° N, 37.6173° E</span>
-              <span class="meta-chip">5 звезд</span>
-              <span class="meta-chip">крыша · 21:30</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=1400&q=82" alt="Панорама Москвы из отеля">
-              <figcaption class="caption">панорама · окна в пол</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: 4deg">
-              <img src="https://images.unsplash.com/photo-1669793705868-14f2e3ef8d84?w=700&q=80" alt="Городской свет Москвы">
-              <figcaption class="caption">черная машина · вечерний город</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: -3deg">
-              <img src="https://images.unsplash.com/photo-1762242376052-d82f0bea4dfd?w=700&q=80" alt="Люксовый интерьер">
-              <figcaption class="caption">мрамор · халат · спа</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: 2deg">
-              <img src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=700&q=80" alt="Город и путешествие">
-              <figcaption class="caption">шампанское на завтрак</figcaption>
-            </figure>
-            <div class="stamp">Городской побег</div>
-            <div class="note"><strong>Деталь</strong>поздний выезд, тихий спа, ресторан после заката</div>
-            <div class="boarding"><span><strong>MOW</strong>люксовый уикенд</span><span>24 ч</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard" style="--accent: #ff6b6b; --board-bg: #fff3eb" data-accent="#ff6b6b" aria-label="Moodboard: Турция">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 03</div>
-            <h2>Турция: лёгкий люкс</h2>
-            <p>Теплая свобода: яхта, закат, апельсины и ужин при свечах.</p>
-            <div class="board-meta">
-              <span class="meta-chip">36.8969° N, 30.7133° E</span>
-              <span class="meta-chip">+27° · закат</span>
-              <span class="meta-chip">пляжный клуб</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: 1deg">
-              <img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=1400&q=82" alt="Закат у воды в Турции">
-              <figcaption class="caption">ужин на закате · Средиземное море</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: -5deg">
-              <img src="https://images.unsplash.com/photo-1706349441547-baac3bd220a5?w=700&q=80" alt="Турецкий берег">
-              <figcaption class="caption">яхта · соленый воздух</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: 4deg">
-              <img src="https://images.unsplash.com/photo-1754658531993-66add0b893c4?w=700&q=80" alt="Теплый вечер в Турции">
-              <figcaption class="caption">лён · свечи · золото</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Полет над водой">
-              <figcaption class="caption">шары Каппадокии · рассвет</figcaption>
-            </figure>
-            <div class="stamp">Тёплая свобода</div>
-            <div class="note"><strong>Палитра</strong>терракота, оранжевый закат, синий океан, золото</div>
-            <div class="boarding"><span><strong>AYT</strong>уикенд у моря</span><span>3 ч 40 мин</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard" style="--accent: #0066ff; --board-bg: #eef2f1" data-accent="#0066ff" aria-label="Moodboard: Россия">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 04</div>
-            <h2>Россия: путь</h2>
-            <p>Дорога со смыслом: поезд, чай, лес и северный свет за окном.</p>
-            <div class="board-meta">
-              <span class="meta-chip">маршрут · 3 города</span>
-              <span class="meta-chip">ночной поезд</span>
-              <span class="meta-chip">янтарный свет</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=1400&q=82" alt="Поезд на фоне природы">
-              <figcaption class="caption">поезд · старые станции · открытие</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: 3deg">
-              <img src="https://images.unsplash.com/photo-1705775299869-600da44da8ff?w=700&q=80" alt="Деталь поездки по России">
-              <figcaption class="caption">чай в дороге</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: -4deg">
-              <img src="https://images.unsplash.com/photo-1691583224443-1fefd0afaa51?w=700&q=80" alt="Российская природа">
-              <figcaption class="caption">лес · снег · северный воздух</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: 2deg">
-              <img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Окно и тихий интерьер">
-              <figcaption class="caption">винтажный блокнот</figcaption>
-            </figure>
-            <div class="stamp">Путешествие</div>
-            <div class="note"><strong>Маршрут</strong>город, дорога, природа, ужин в новом месте</div>
-            <div class="boarding"><span><strong>RUS</strong>маршрут открытий</span><span>уикенд</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard" style="--accent: #ff6b6b; --board-bg: #fbf0df" data-accent="#ff6b6b" aria-label="Moodboard: Узбекистан">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 05</div>
-            <h2>Узбекистан: сон</h2>
-            <p>Арки, мозаика, чай, ткани и золотые тени на закатных улицах.</p>
-            <div class="board-meta">
-              <span class="meta-chip">39.6542° N, 66.9597° E</span>
-              <span class="meta-chip">золотой час</span>
-              <span class="meta-chip">Самарканд</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: 1deg">
-              <img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=1400&q=82" alt="Восточная мозаика и орнаменты">
-              <figcaption class="caption">мозаика · арки · глубокий синий</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: -3deg">
-              <img src="https://images.unsplash.com/photo-1630245935603-a409cfaa97e4?w=700&q=80" alt="Архитектура Узбекистана">
-              <figcaption class="caption">чай · рынок · ткани</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: 4deg">
-              <img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Орнаментальная деталь">
-              <figcaption class="caption">золотые орнаменты</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: -2deg">
-              <img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Закатный теплый свет">
-              <figcaption class="caption">тени · закат · улицы</figcaption>
-            </figure>
-            <div class="stamp">Восточный сон</div>
-            <div class="note"><strong>Фокус</strong>не туристический маршрут, а восточная сказка в деталях</div>
-            <div class="boarding"><span><strong>SKD</strong>настроение Шёлкового пути</span><span>4 ч</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard moodboard-dark" style="--accent: #00c896; --board-bg: #161327" data-accent="#00c896" aria-label="Moodboard: Тай и Вьетнам">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 06</div>
-            <h2>Тай / Вьетнам: неон</h2>
-            <p>Свобода, шум, тропический дождь, скутеры и коктейли на крыше.</p>
-            <div class="board-meta">
-              <span class="meta-chip">ночной рынок</span>
-              <span class="meta-chip">+29° · дождь</span>
-              <span class="meta-chip">бар на крыше</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=1400&q=82" alt="Неоновая улица в Азии">
-              <figcaption class="caption">неон · китайский квартал · ночная энергия</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: 4deg">
-              <img src="https://images.unsplash.com/photo-1549375463-8cbc18ca3f24?w=700&q=80" alt="Тропическая улица">
-              <figcaption class="caption">скутеры · уличная еда</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: -3deg">
-              <img src="https://images.unsplash.com/photo-1774703699594-24267a0db2fe?w=700&q=80" alt="Пляжная атмосфера Азии">
-              <figcaption class="caption">пальмы · теплое море</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: 2deg">
-              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Городская панорама вечером">
-              <figcaption class="caption">коктейли на крыше</figcaption>
-            </figure>
-            <div class="stamp">Неоновое приключение</div>
-            <div class="note"><strong>Энергия</strong>хаос, свобода, теплый дождь и город, который не спит</div>
-            <div class="boarding"><span><strong>BKK</strong>ночной рейс</span><span>9 ч</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard" style="--accent: #00c896; --board-bg: #f4efe6" data-accent="#00c896" aria-label="Moodboard: Подмосковье">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 07</div>
-            <h2>Подмосковье: перезагрузка</h2>
-            <p>Тишина, лес, баня, книги, чай и дождь за панорамным окном.</p>
-            <div class="board-meta">
-              <span class="meta-chip">без перелетов</span>
-              <span class="meta-chip">чан · 22:00</span>
-              <span class="meta-chip">лесной воздух</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: 1deg">
-              <img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=1400&q=82" alt="Дом с панорамным окном среди зелени">
-              <figcaption class="caption">панорамное окно · лес · тишина</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: -4deg">
-              <img src="https://images.unsplash.com/photo-1769256050030-e30bfc946d83?w=700&q=80" alt="Минималистичный интерьер">
-              <figcaption class="caption">дерево · минимализм</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: 3deg">
-              <img src="https://images.unsplash.com/photo-1773994788518-31be9cf58f3c?w=700&q=80" alt="Уютный эко-отель">
-              <figcaption class="caption">баня · чан · свечи</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Природа и тихий дом">
-              <figcaption class="caption">чайный ритуал · книги</figcaption>
-            </figure>
-            <div class="stamp">Тихий люкс</div>
-            <div class="note"><strong>Ритм</strong>медленно, тихо, без аэропорта и без расписания</div>
-            <div class="boarding"><span><strong>MO</strong>лесная перезагрузка</span><span>1 ч в пути</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="slide moodboard moodboard-dark" style="--accent: #ff6b6b; --board-bg: #171316" data-accent="#ff6b6b" aria-label="Moodboard: Вечеринка в особняке">
-        <div class="moodboard-inner">
-          <div class="board-title">
-            <div class="category">Мудборд 08</div>
-            <h2>Вечеринка в особняке</h2>
-            <p>Энергия главной роли: длинный стол, музыка, серебро, свечи и танцы до ночи.</p>
-            <div class="board-meta">
-              <span class="meta-chip">Москва · 20:00</span>
-              <span class="meta-chip">дресс-код</span>
-              <span class="meta-chip">диджей-сет</span>
-            </div>
-          </div>
-          <div class="board-canvas">
-            <figure class="board-photo hero" style="--r: -1deg">
-              <img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=1400&q=82" alt="Вечеринка у особняка">
-              <figcaption class="caption">особняк · гирлянды · силуэты</figcaption>
-            </figure>
-            <figure class="board-photo detail-a" style="--r: 4deg">
-              <img src="https://images.unsplash.com/photo-1672189448776-28d8bea275bf?w=700&q=80" alt="Атмосфера вечеринки">
-              <figcaption class="caption">длинный стол · свечи</figcaption>
-            </figure>
-            <figure class="board-photo detail-b" style="--r: -3deg">
-              <img src="https://images.unsplash.com/photo-1764269719300-7094d6c00533?w=700&q=80" alt="Свет и танцы">
-              <figcaption class="caption">диджей · диско-свет</figcaption>
-            </figure>
-            <figure class="board-photo detail-c" style="--r: 2deg">
-              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний люкс">
-              <figcaption class="caption">башня из шампанского · красный бархат</figcaption>
-            </figure>
-            <div class="stamp">Запомнить ночь</div>
-            <div class="note"><strong>Кадр</strong>друзья не позируют, свет движется, вечер выглядит как фильм</div>
-            <div class="boarding"><span><strong>MSK</strong>частный особняк</span><span>всю ночь</span></div>
-            <span class="tape one"></span>
-            <span class="tape two"></span>
-          </div>
-        </div>
-      </section>
-
       <section class="slide final" data-accent="#0066ff" aria-label="Финальный слайд">
-        <img class="final-image" src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=1920&q=80" alt="Самолет над водой">
+        <img loading="lazy" decoding="async" class="final-image" src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=1920&q=80" alt="Самолет над водой">
         <div class="final-content">
           <div class="eyebrow">Посадочный на новый сценарий</div>
           <h2>Какой сценарий станет историей?</h2>
@@ -1791,10 +1555,10 @@
           </div>
         </div>
         <div class="polaroids" aria-hidden="true">
-          <div class="polaroid" style="--rotate: -7deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=500&q=80" alt=""></div>
-          <div class="polaroid" style="--rotate: 5deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=500&q=80" alt=""></div>
-          <div class="polaroid" style="--rotate: 4deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=500&q=80" alt=""></div>
-          <div class="polaroid" style="--rotate: -5deg"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: -7deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: 5deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: 4deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: -5deg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=500&q=80" alt=""></div>
         </div>
       </section>
 
@@ -1808,14 +1572,14 @@
             <p>Все варианты уже собраны как продуманная подборка впечатлений на день рождения. Осталось выбрать настроение, бюджет и дату.</p>
           </div>
           <div class="choice-grid">
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Грузия"><span>Эко-отель в Грузии</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Москва"><span>Москва + спа</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Турция"><span>Турция</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=700&q=80" alt="Россия"><span>Поездка по России</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Узбекистан"><span>Узбекистан</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=700&q=80" alt="Тай и Вьетнам"><span>Тай / Вьетнам</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Подмосковье"><span>Эко-отель в Подмосковье</span></article>
-            <article class="choice-card"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=700&q=80" alt="Тематическая вечеринка"><span>Тематическая вечеринка</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Грузия"><span>Эко-отель в Грузии</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Москва"><span>Москва + спа</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Турция"><span>Турция</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=700&q=80" alt="Россия"><span>Поездка по России</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Узбекистан"><span>Узбекистан</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=700&q=80" alt="Тай и Вьетнам"><span>Тай / Вьетнам</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Подмосковье"><span>Эко-отель в Подмосковье</span></article>
+            <article class="choice-card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=700&q=80" alt="Тематическая вечеринка"><span>Тематическая вечеринка</span></article>
           </div>
           <div class="choice-footer">
             <strong>Следующий шаг: выбрать топ-2 сценария</strong>
@@ -1915,3 +1679,4 @@
   </script>
 </body>
 </html>
+
