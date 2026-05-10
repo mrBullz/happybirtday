@@ -1,0 +1,1917 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Идеи для празднования 30-летия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0066ff;
+      --green: #00c896;
+      --coral: #ff6b6b;
+      --black: #050505;
+      --muted: #6b7280;
+      --soft: #f4f6f8;
+      --line: rgba(0, 0, 0, .08);
+      --shadow: 0 30px 80px rgba(15, 23, 42, .16);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+      color: var(--black);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      letter-spacing: 0;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+    }
+
+    .track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .slide-inner {
+      width: min(1500px, calc(100vw - 112px));
+      height: min(840px, calc(100vh - 96px));
+      margin: 48px auto;
+    }
+
+    .cover,
+    .final {
+      color: #fff;
+      background: #050505;
+    }
+
+    .cover-image,
+    .final-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .92;
+      transform: scale(1.02);
+    }
+
+    .cover::after,
+    .final::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(0, 102, 255, .36), transparent 28%),
+        linear-gradient(115deg, rgba(0, 0, 0, .68) 0%, rgba(0, 0, 0, .22) 48%, rgba(0, 0, 0, .72) 100%);
+    }
+
+    .cover-content,
+    .final-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      align-content: end;
+      width: min(1320px, calc(100vw - 112px));
+      height: calc(100vh - 112px);
+      margin: 56px auto;
+      text-shadow: 0 18px 46px rgba(0, 0, 0, .36);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .18);
+      color: rgba(255, 255, 255, .92);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(18px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    .cover h1,
+    .final h2 {
+      max-width: 980px;
+      font-size: clamp(54px, 6vw, 88px);
+      line-height: .94;
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+
+    .cover p,
+    .final p {
+      max-width: 760px;
+      margin-top: 28px;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1.32;
+      font-weight: 300;
+    }
+
+    .mood-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 44px;
+    }
+
+    .mood-pill {
+      padding: 11px 16px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .9);
+      font-size: 15px;
+      backdrop-filter: blur(14px);
+    }
+
+    .split .slide-inner {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: 58px;
+    }
+
+    .copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .category {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .category::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent), transparent 86%);
+    }
+
+    .copy h2 {
+      max-width: 620px;
+      font-size: clamp(44px, 4.8vw, 68px);
+      line-height: .98;
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+
+    .mood {
+      max-width: 610px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.42;
+      font-weight: 300;
+    }
+
+    .why-card {
+      max-width: 620px;
+      margin-top: 42px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, .08);
+    }
+
+    .why-card h3,
+    .themes h3 {
+      margin: 0 0 18px;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .why-card ul {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .why-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #202020;
+      font-size: 17px;
+      line-height: 1.38;
+    }
+
+    .why-card li::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 7px;
+      height: 7px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .associations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      max-width: 620px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent), white 90%);
+      color: color-mix(in srgb, var(--accent), black 28%);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .media-card {
+      position: relative;
+      min-height: 0;
+      height: 100%;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--soft);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .mini-board {
+      position: relative;
+      height: 100%;
+      min-height: 640px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--accent), transparent 82%), transparent 28%),
+        linear-gradient(135deg, #fafafa, color-mix(in srgb, var(--accent), white 94%));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .mini-board::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .14;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, .05) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(135deg, transparent, #000 24%, #000 78%, transparent);
+    }
+
+    .mini-shot {
+      position: absolute;
+      z-index: 2;
+      overflow: hidden;
+      border: 8px solid rgba(255, 255, 255, .9);
+      border-radius: 26px;
+      background: #e5e7eb;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, .18);
+      transform: rotate(var(--r, 0deg));
+    }
+
+    .mini-shot.hero {
+      top: 5%;
+      right: 5%;
+      width: 70%;
+      height: 58%;
+      border-width: 0;
+      border-radius: 32px;
+    }
+
+    .mini-shot.a {
+      left: 6%;
+      top: 40%;
+      width: 35%;
+      height: 28%;
+    }
+
+    .mini-shot.b {
+      right: 6%;
+      bottom: 6%;
+      width: 34%;
+      height: 28%;
+    }
+
+    .mini-shot.c {
+      left: 28%;
+      bottom: 8%;
+      width: 30%;
+      height: 24%;
+    }
+
+    .mini-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(.96) saturate(.94);
+      transform: scale(1.03);
+    }
+
+    .mini-shot figcaption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, .44);
+    }
+
+    .mini-stamp,
+    .mini-note {
+      position: absolute;
+      z-index: 4;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, .14);
+      backdrop-filter: blur(18px);
+    }
+
+    .mini-stamp {
+      left: 7%;
+      top: 9%;
+      padding: 11px 14px;
+      border: 1px solid color-mix(in srgb, var(--accent), white 48%);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent), white 88%);
+      color: color-mix(in srgb, var(--accent), black 34%);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .mini-note {
+      left: 7%;
+      bottom: 7%;
+      max-width: 230px;
+      padding: 15px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .82);
+      color: rgba(0, 0, 0, .72);
+      font-size: 14px;
+      line-height: 1.32;
+    }
+
+    .mini-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #111;
+      font-size: 15px;
+    }
+
+    .mini-tape {
+      display: none;
+    }
+
+    .mini-tape.one {
+      right: 30%;
+      top: 3%;
+    }
+
+    .mini-tape.two {
+      left: 22%;
+      bottom: 33%;
+    }
+
+    .slide.is-active .media-card img,
+    .slide.is-active .mini-shot img,
+    .slide.is-active .cover-image,
+    .slide.is-active .final-image {
+      transform: scale(1);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .18);
+      color: #fff;
+      backdrop-filter: blur(22px);
+      text-shadow: 0 8px 22px rgba(0, 0, 0, .28);
+    }
+
+    .photo-overlay strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .photo-overlay span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 14px;
+    }
+
+    .themes {
+      max-width: 620px;
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: #f6f7f9;
+    }
+
+    .theme-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .theme-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      color: #161616;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .07);
+    }
+
+    .final::after {
+      background:
+        radial-gradient(circle at 22% 22%, rgba(0, 200, 150, .34), transparent 26%),
+        radial-gradient(circle at 78% 70%, rgba(255, 107, 107, .34), transparent 28%),
+        linear-gradient(120deg, rgba(0, 0, 0, .74), rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .68));
+    }
+
+    .final-content {
+      align-content: center;
+    }
+
+    .polaroids {
+      position: absolute;
+      z-index: 2;
+      right: 6vw;
+      bottom: 9vh;
+      display: grid;
+      grid-template-columns: repeat(2, 160px);
+      gap: 18px;
+      pointer-events: none;
+    }
+
+    .polaroid {
+      height: 190px;
+      padding: 10px 10px 34px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+      transform: rotate(var(--rotate));
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .choice {
+      background:
+        radial-gradient(circle at 14% 16%, rgba(0, 102, 255, .11), transparent 26%),
+        radial-gradient(circle at 84% 72%, rgba(255, 107, 107, .14), transparent 28%),
+        #fff;
+    }
+
+    .choice-inner {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 24px;
+      width: min(1500px, calc(100vw - 112px));
+      height: min(840px, calc(100vh - 96px));
+      margin: 48px auto;
+    }
+
+    .choice-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .choice-header h2 {
+      max-width: 820px;
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: .95;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .choice-header p {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .choice-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      border-radius: 26px;
+      background: #111;
+      box-shadow: 0 24px 68px rgba(15, 23, 42, .15);
+    }
+
+    .choice-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.92) contrast(.96);
+      transform: scale(1.02);
+    }
+
+    .choice-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 32%, rgba(0, 0, 0, .74));
+    }
+
+    .choice-card span {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.12;
+      text-shadow: 0 10px 28px rgba(0, 0, 0, .38);
+    }
+
+    .choice-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 22px;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .76);
+      box-shadow: 0 18px 54px rgba(15, 23, 42, .1);
+      backdrop-filter: blur(18px);
+    }
+
+    .choice-footer strong {
+      font-size: 20px;
+    }
+
+    .choice-footer span {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .9);
+      color: #070707;
+      box-shadow: 0 18px 44px rgba(15, 23, 42, .18);
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: transform .2s ease, background .2s ease;
+      backdrop-filter: blur(16px);
+    }
+
+    .nav:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .nav.prev {
+      left: 28px;
+    }
+
+    .nav.next {
+      right: 28px;
+    }
+
+    .nav svg {
+      width: 25px;
+      height: 25px;
+      stroke-width: 2;
+    }
+
+    .dots {
+      position: fixed;
+      z-index: 20;
+      left: 50%;
+      bottom: 30px;
+      display: flex;
+      gap: 9px;
+      transform: translateX(-50%);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .24);
+      cursor: pointer;
+      transition: width .25s ease, background .25s ease, opacity .25s ease;
+    }
+
+    .deck.dark-ui .dot {
+      background: rgba(255, 255, 255, .5);
+    }
+
+    .deck.dark-ui .counter {
+      background: rgba(255, 255, 255, .18);
+      color: rgba(255, 255, 255, .88);
+    }
+
+    .dot.active {
+      width: 28px;
+      background: var(--active, var(--blue));
+    }
+
+    .counter {
+      position: fixed;
+      z-index: 20;
+      top: 28px;
+      right: 34px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .84);
+      color: rgba(0, 0, 0, .68);
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, .1);
+      backdrop-filter: blur(18px);
+    }
+
+    .moodboard {
+      background:
+        radial-gradient(circle at 16% 12%, color-mix(in srgb, var(--accent), transparent 82%), transparent 30%),
+        linear-gradient(135deg, var(--board-bg, #fbfaf7), #fff);
+    }
+
+    .track > .moodboard {
+      display: none;
+    }
+
+    .moodboard::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, .04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(120deg, transparent, #000 24%, #000 76%, transparent);
+    }
+
+    .moodboard-inner {
+      position: relative;
+      width: min(1500px, calc(100vw - 112px));
+      height: min(840px, calc(100vh - 96px));
+      margin: 48px auto;
+    }
+
+    .board-title {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      top: 8px;
+      width: min(520px, 38vw);
+    }
+
+    .board-title .category {
+      margin-bottom: 18px;
+    }
+
+    .board-title h2 {
+      font-size: clamp(48px, 5.2vw, 76px);
+      line-height: .92;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .board-title p {
+      max-width: 460px;
+      margin-top: 18px;
+      color: rgba(0, 0, 0, .62);
+      font-size: 20px;
+      line-height: 1.36;
+    }
+
+    .moodboard-dark .board-title h2,
+    .moodboard-dark .note strong,
+    .moodboard-dark .boarding strong {
+      color: #fff;
+    }
+
+    .moodboard-dark .board-title p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .moodboard-dark .meta-chip,
+    .moodboard-dark .note,
+    .moodboard-dark .boarding {
+      border-color: rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .74);
+    }
+
+    .board-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .meta-chip {
+      padding: 9px 12px;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .72);
+      color: rgba(0, 0, 0, .68);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, .08);
+      backdrop-filter: blur(14px);
+    }
+
+    .board-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .board-photo {
+      position: absolute;
+      overflow: hidden;
+      border: 10px solid rgba(255, 255, 255, .9);
+      border-radius: 28px;
+      background: #e5e7eb;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .18);
+      transform: rotate(var(--r, 0deg));
+    }
+
+    .board-photo.hero {
+      right: 3%;
+      top: 4%;
+      width: 56%;
+      height: 68%;
+      border-width: 0;
+      border-radius: 34px;
+      box-shadow: 0 38px 110px rgba(15, 23, 42, .22);
+    }
+
+    .board-photo.detail-a {
+      left: 22%;
+      top: 40%;
+      width: 22%;
+      height: 34%;
+    }
+
+    .board-photo.detail-b {
+      right: 0;
+      bottom: 2%;
+      width: 24%;
+      height: 32%;
+    }
+
+    .board-photo.detail-c {
+      left: 44%;
+      bottom: 4%;
+      width: 19%;
+      height: 28%;
+    }
+
+    .board-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(.96) saturate(.94);
+      transform: scale(1.03);
+    }
+
+    .board-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, .2), transparent 28%),
+        linear-gradient(to bottom, transparent 48%, rgba(0, 0, 0, .32));
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, .42);
+    }
+
+    .stamp,
+    .note,
+    .boarding {
+      position: absolute;
+      z-index: 6;
+      border-radius: 20px;
+      box-shadow: 0 20px 54px rgba(15, 23, 42, .14);
+      backdrop-filter: blur(18px);
+    }
+
+    .stamp {
+      right: 38%;
+      top: 15%;
+      padding: 12px 16px;
+      border: 1px solid color-mix(in srgb, var(--accent), white 48%);
+      background: color-mix(in srgb, var(--accent), white 88%);
+      color: color-mix(in srgb, var(--accent), black 34%);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transform: rotate(-6deg);
+    }
+
+    .note {
+      left: 1%;
+      bottom: 13%;
+      width: 240px;
+      padding: 18px;
+      background: rgba(255, 255, 255, .84);
+      color: rgba(0, 0, 0, .72);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #111;
+      font-size: 16px;
+    }
+
+    .boarding {
+      right: 25%;
+      bottom: 9%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      min-width: 270px;
+      padding: 15px 18px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .78);
+      color: rgba(0, 0, 0, .68);
+      font-size: 13px;
+    }
+
+    .boarding strong {
+      display: block;
+      color: #111;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .tape {
+      display: none;
+    }
+
+    .tape.one {
+      right: 33%;
+      top: 3%;
+    }
+
+    .tape.two {
+      left: 36%;
+      bottom: 30%;
+    }
+
+    @media (max-width: 980px) {
+      body {
+        overflow: auto;
+      }
+
+      .deck,
+      .track,
+      .slide {
+        min-height: 100vh;
+        height: auto;
+      }
+
+      .track {
+        display: block;
+        transform: none !important;
+      }
+
+      .slide {
+        min-height: 100vh;
+      }
+
+      .slide:not(.is-active) {
+        display: none;
+      }
+
+      .slide-inner,
+      .cover-content,
+      .final-content {
+        width: min(100% - 32px, 720px);
+        height: auto;
+        min-height: calc(100vh - 56px);
+        margin: 28px auto;
+      }
+
+      .split .slide-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        align-content: center;
+      }
+
+      .copy h2,
+      .cover h1,
+      .final h2 {
+        font-size: clamp(40px, 11vw, 58px);
+      }
+
+      .media-card {
+        height: 42vh;
+        min-height: 320px;
+      }
+
+      .mini-board {
+        height: 54vh;
+        min-height: 420px;
+      }
+
+      .mini-shot.hero {
+        width: 74%;
+        height: 50%;
+      }
+
+      .mini-shot.a,
+      .mini-shot.b,
+      .mini-shot.c {
+        height: 25%;
+      }
+
+      .mini-note {
+        max-width: 200px;
+      }
+
+      .why-card {
+        margin-top: 28px;
+      }
+
+      .moodboard-inner {
+        width: min(100% - 32px, 720px);
+        height: auto;
+        min-height: calc(100vh - 56px);
+        margin: 28px auto;
+        padding-bottom: 82px;
+      }
+
+      .board-title,
+      .board-canvas,
+      .board-photo,
+      .stamp,
+      .note,
+      .boarding,
+      .tape {
+        position: relative;
+        inset: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: auto;
+        transform: none;
+      }
+
+      .board-title {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .board-title h2 {
+        font-size: clamp(38px, 10vw, 56px);
+      }
+
+      .board-canvas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .board-photo.hero {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 42vh;
+        min-height: 320px;
+      }
+
+      .board-photo.detail-a,
+      .board-photo.detail-b,
+      .board-photo.detail-c {
+        width: 100%;
+        height: 210px;
+      }
+
+      .stamp,
+      .note,
+      .boarding {
+        grid-column: 1 / -1;
+      }
+
+      .tape {
+        display: none;
+      }
+
+      .polaroids,
+      .counter {
+        display: none;
+      }
+
+      .choice-inner {
+        width: min(100% - 32px, 720px);
+        height: auto;
+        min-height: calc(100vh - 56px);
+        margin: 28px auto;
+      }
+
+      .choice-header,
+      .choice-footer {
+        display: grid;
+        gap: 14px;
+      }
+
+      .choice-header h2 {
+        font-size: clamp(38px, 10vw, 56px);
+      }
+
+      .choice-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .choice-card {
+        min-height: 180px;
+      }
+
+      .nav {
+        width: 48px;
+        height: 48px;
+      }
+
+      .nav.prev {
+        left: 12px;
+      }
+
+      .nav.next {
+        right: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-label="Презентация: идеи для празднования 30-летия">
+    <div class="track" id="track">
+      <section class="slide cover is-active" data-accent="#0066ff" aria-label="Обложка">
+        <img class="cover-image" src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=1920&q=80" alt="Самолет над городом">
+        <div class="cover-content">
+          <div class="eyebrow">Подборка впечатлений на день рождения</div>
+          <h1>Идеи для празднования 30-летия</h1>
+          <p>8 сценариев — от романтичного уикенда до большой вечеринки мечты</p>
+          <div class="mood-row" aria-label="Настроение презентации">
+            <span class="mood-pill">Люксовые отели</span>
+            <span class="mood-pill">Горы</span>
+            <span class="mood-pill">Спа</span>
+            <span class="mood-pill">Вечеринка на крыше</span>
+            <span class="mood-pill">Идеи для путешествий</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #00c896" data-accent="#00c896" aria-label="Эко-отель в Грузии">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется романтики</div>
+            <h2>Эко-отель в Грузии</h2>
+            <p class="mood">Горы, вино, тишина и ощущение, что весь мир на пару дней остался где-то далеко.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Горы, природа и вино</li>
+                <li>Ощущение «мы отдельно от мира»</li>
+                <li>Красивые завтраки и спа</li>
+                <li>Атмосферные ужины</li>
+                <li>Возможность цифрового детокса</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">вид на горы</span>
+              <span class="tag">камин</span>
+              <span class="tag">медленные утра</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: романтика в Грузии">
+            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=1200&q=82" alt="Горы Грузии"><figcaption>горы в тумане · терраса</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1737122175352-1e9616909ea2?w=700&q=80" alt="Атмосферный горный кадр"><figcaption>утренний кофе</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1733551630056-098837789d62?w=700&q=80" alt="Горный пейзаж"><figcaption>плед · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -2deg"><img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Путешествие в мягком свете"><figcaption>ужин на природе</figcaption></figure>
+            <div class="mini-stamp">Медленный люкс</div>
+            <div class="mini-note"><strong>TBS · +18°</strong>вино вечером, камин и телефоны в авиарежиме</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #0066ff" data-accent="#0066ff" aria-label="Отель в центре Москвы и спа">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется лакшери</div>
+            <h2>Отель в центре Москвы + спа</h2>
+            <p class="mood">Городской уикенд в режиме красивой жизни: поздний завтрак, спа, панорамы и рестораны.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Красивый городской уикенд</li>
+                <li>Премиум-сервис</li>
+                <li>Спа и расслабление</li>
+                <li>Рестораны на крыше</li>
+                <li>Ощущение «фильма про красивую жизнь»</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">огни города</span>
+              <span class="tag">завтрак с шампанским</span>
+              <span class="tag">крыша с видом</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: Москва и спа">
+            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=1200&q=82" alt="Панорама Москвы"><figcaption>панорама · окна в пол</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1669793705868-14f2e3ef8d84?w=700&q=80" alt="Городской свет Москвы"><figcaption>вечерний город</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1762242376052-d82f0bea4dfd?w=700&q=80" alt="Люксовый интерьер"><figcaption>мрамор · спа</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=700&q=80" alt="Городское путешествие"><figcaption>завтрак с шампанским</figcaption></figure>
+            <div class="mini-stamp">Городской побег</div>
+            <div class="mini-note"><strong>MOW · 5 звезд</strong>поздний выезд, тихий спа и ресторан после заката</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #ff6b6b" data-accent="#ff6b6b" aria-label="Турция">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется ярко и легко</div>
+            <h2>Турция</h2>
+            <p class="mood">Солнце, море, яхты, закаты и лёгкий люкс без сложной логистики и лишнего напряжения.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Море и солнце</li>
+                <li>Яхты и пляжные клубы</li>
+                <li>Красивые закаты</li>
+                <li>Лёгкий люкс</li>
+                <li>Ощущение отпуска без стресса</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">ужин на закате</span>
+              <span class="tag">пляжный клуб</span>
+              <span class="tag">настроение Каппадокии</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: Турция">
+            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=1200&q=82" alt="Закат у воды"><figcaption>ужин на закате · море</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -5deg"><img src="https://images.unsplash.com/photo-1706349441547-baac3bd220a5?w=700&q=80" alt="Турецкий берег"><figcaption>яхта · соленый воздух</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1754658531993-66add0b893c4?w=700&q=80" alt="Теплый вечер"><figcaption>лён · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Полет над водой"><figcaption>рассвет · Каппадокия</figcaption></figure>
+            <div class="mini-stamp">Тёплая свобода</div>
+            <div class="mini-note"><strong>AYT · +27°</strong>пляжный клуб, закат и ужин при свечах</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #0066ff" data-accent="#0066ff" aria-label="Поездка по России">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется чего-то со смыслом</div>
+            <h2>Поездка по России</h2>
+            <p class="mood">Маршрут с характером: города, гастрономия, северная эстетика и настоящее ощущение дороги.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Новые впечатления</li>
+                <li>Атмосферные города</li>
+                <li>Гастрономия</li>
+                <li>Северная эстетика</li>
+                <li>Ощущение настоящего путешествия</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">поезд</span>
+              <span class="tag">Казань</span>
+              <span class="tag">дневник дороги</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: поездка по России">
+            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=1200&q=82" alt="Поезд в пути"><figcaption>поезд · старые станции</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1705775299869-600da44da8ff?w=700&q=80" alt="Деталь дороги"><figcaption>чай в дороге</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1691583224443-1fefd0afaa51?w=700&q=80" alt="Российская природа"><figcaption>лес · северный воздух</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Окно и интерьер"><figcaption>винтажный блокнот</figcaption></figure>
+            <div class="mini-stamp">Путешествие</div>
+            <div class="mini-note"><strong>RUS · уикенд</strong>город, дорога, природа и ужин в новом месте</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #ff6b6b" data-accent="#ff6b6b" aria-label="Узбекистан">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Восточная эстетика</div>
+            <h2>Узбекистан</h2>
+            <p class="mood">Самарканд, Бухара, узоры, рынки и свет заката: путешествие, которое выглядит как восточная сказка.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Невероятная архитектура</li>
+                <li>Атмосфера восточной сказки</li>
+                <li>Очень фотогенично</li>
+                <li>Вкусная еда</li>
+                <li>Ощущение нового мира</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">Самарканд</span>
+              <span class="tag">узоры</span>
+              <span class="tag">золотые улицы</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: Узбекистан">
+            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=1200&q=82" alt="Восточная мозаика"><figcaption>мозаика · арки</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1630245935603-a409cfaa97e4?w=700&q=80" alt="Архитектура Узбекистана"><figcaption>чай · ткани</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Орнаментальная деталь"><figcaption>золотые орнаменты</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -2deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Закатный свет"><figcaption>закатные улицы</figcaption></figure>
+            <div class="mini-stamp">Восточный сон</div>
+            <div class="mini-note"><strong>SKD · золотой час</strong>рынки, тени и настроение Шёлкового пути</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #00c896" data-accent="#00c896" aria-label="Тай и Вьетнам">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Экзотика и приключение</div>
+            <h2>Тай / Вьетнам</h2>
+            <p class="mood">Тёплое море, неоновые ночи, уличная еда, массажи и свобода, из которой складываются лучшие истории.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Тёплое море</li>
+                <li>Уличная еда</li>
+                <li>Ночная жизнь</li>
+                <li>Массажи и спа</li>
+                <li>Ощущение свободы и приключения</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">крыши Бангкока</span>
+              <span class="tag">неон</span>
+              <span class="tag">дни на островах</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: Тай и Вьетнам">
+            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=1200&q=82" alt="Неоновая улица"><figcaption>неон · ночная энергия</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1549375463-8cbc18ca3f24?w=700&q=80" alt="Тропическая улица"><figcaption>скутеры · уличная еда</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1774703699594-24267a0db2fe?w=700&q=80" alt="Пляжная атмосфера"><figcaption>пальмы · море</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний город"><figcaption>коктейли на крыше</figcaption></figure>
+            <div class="mini-stamp">Неоновое приключение</div>
+            <div class="mini-note"><strong>BKK · +29°</strong>хаос, свобода, теплый дождь и город без сна</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #00c896" data-accent="#00c896" aria-label="Эко-отель в Подмосковье">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется тихо и уютно</div>
+            <h2>Эко-отель в Подмосковье</h2>
+            <p class="mood">Близко, спокойно и красиво: лес, баня, камин, свечи и перезагрузка без перелетов.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Отдых без перелётов</li>
+                <li>Баня/чан</li>
+                <li>Камин и природа</li>
+                <li>Медленный ритм</li>
+                <li>Перезагрузка</li>
+              </ul>
+            </div>
+            <div class="associations">
+              <span class="tag">дом в лесу</span>
+              <span class="tag">чан</span>
+              <span class="tag">свечи</span>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: Подмосковье">
+            <figure class="mini-shot hero" style="--r: 1deg"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=1200&q=82" alt="Дом с панорамным окном"><figcaption>панорамное окно · лес</figcaption></figure>
+            <figure class="mini-shot a" style="--r: -4deg"><img src="https://images.unsplash.com/photo-1769256050030-e30bfc946d83?w=700&q=80" alt="Минималистичный интерьер"><figcaption>дерево · минимализм</figcaption></figure>
+            <figure class="mini-shot b" style="--r: 3deg"><img src="https://images.unsplash.com/photo-1773994788518-31be9cf58f3c?w=700&q=80" alt="Уютный эко-отель"><figcaption>баня · свечи</figcaption></figure>
+            <figure class="mini-shot c" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Природа и тихий дом"><figcaption>чай · книги</figcaption></figure>
+            <div class="mini-stamp">Тихий люкс</div>
+            <div class="mini-note"><strong>MO · без перелёта</strong>лесной воздух, чан в 22:00 и тишина</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide split" style="--accent: #ff6b6b" data-accent="#ff6b6b" aria-label="Особняк и тематическая вечеринка">
+        <div class="slide-inner">
+          <div class="copy">
+            <div class="category">Если хочется весело и масштабно</div>
+            <h2>Тематическая вечеринка</h2>
+            <p class="mood">Особняк в Москве, друзья, свет, диджей, коктейли, дресс-код и ощущение собственного фильма.</p>
+            <div class="why-card">
+              <h3>Почему это может быть круто</h3>
+              <ul>
+                <li>Праздник, который все запомнят</li>
+                <li>Друзья и атмосфера</li>
+                <li>Стильная вечеринка</li>
+                <li>Ощущение большого события</li>
+                <li>Возможность сделать «свой фильм»</li>
+              </ul>
+            </div>
+            <div class="themes">
+              <h3>Идеи тем</h3>
+              <div class="theme-grid">
+                <span class="theme-chip">Great Gatsby</span>
+                <span class="theme-chip">Studio 54</span>
+                <span class="theme-chip">Black & White</span>
+                <span class="theme-chip">Secret Party</span>
+                <span class="theme-chip">Casino Royale</span>
+              </div>
+            </div>
+          </div>
+          <div class="mini-board" aria-label="Мудборд: вечеринка в особняке">
+            <figure class="mini-shot hero" style="--r: -1deg"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=1200&q=82" alt="Вечеринка у особняка"><figcaption>особняк · гирлянды</figcaption></figure>
+            <figure class="mini-shot a" style="--r: 4deg"><img src="https://images.unsplash.com/photo-1672189448776-28d8bea275bf?w=700&q=80" alt="Атмосфера вечеринки"><figcaption>длинный стол · свечи</figcaption></figure>
+            <figure class="mini-shot b" style="--r: -3deg"><img src="https://images.unsplash.com/photo-1764269719300-7094d6c00533?w=700&q=80" alt="Свет и танцы"><figcaption>диджей · диско-свет</figcaption></figure>
+            <figure class="mini-shot c" style="--r: 2deg"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний люкс"><figcaption>шампанское · бархат</figcaption></figure>
+            <div class="mini-stamp">Запомнить ночь</div>
+            <div class="mini-note"><strong>MSK · 20:00</strong>дресс-код, диджей-сет и вечер как фильм</div>
+            <span class="mini-tape one"></span><span class="mini-tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #00c896; --board-bg: #f4efe5" data-accent="#00c896" aria-label="Moodboard: Грузия">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 01</div>
+            <h2>Грузия: романтика</h2>
+            <p>Медленное утро в горах, вино, камин и ощущение близости.</p>
+            <div class="board-meta">
+              <span class="meta-chip">41.7151° N, 44.8271° E</span>
+              <span class="meta-chip">+18° · туман</span>
+              <span class="meta-chip">2 ночи</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: 1deg">
+              <img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=1400&q=82" alt="Горы Грузии в мягком свете">
+              <figcaption class="caption">Горы в тумане · деревянная терраса</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: -4deg">
+              <img src="https://images.unsplash.com/photo-1737122175352-1e9616909ea2?w=700&q=80" alt="Атмосферный вид Грузии">
+              <figcaption class="caption">утренний кофе</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: 3deg">
+              <img src="https://images.unsplash.com/photo-1733551630056-098837789d62?w=700&q=80" alt="Горный пейзаж">
+              <figcaption class="caption">плед · свечи · камин</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: -2deg">
+              <img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Теплый кадр путешествия">
+              <figcaption class="caption">ужин на природе</figcaption>
+            </figure>
+            <div class="stamp">Медленный люкс</div>
+            <div class="note"><strong>Режим</strong>телефоны в авиарежим, длинный завтрак, вино вечером</div>
+            <div class="boarding"><span><strong>TBS</strong>побег в Грузию</span><span>1 ч 45 мин</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #0066ff; --board-bg: #eef3fb" data-accent="#0066ff" aria-label="Moodboard: Москва и спа">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 02</div>
+            <h2>Москва + спа</h2>
+            <p>Премиальный городской побег: мрамор, панорамные окна и ужин с видом.</p>
+            <div class="board-meta">
+              <span class="meta-chip">55.7558° N, 37.6173° E</span>
+              <span class="meta-chip">5 звезд</span>
+              <span class="meta-chip">крыша · 21:30</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=1400&q=82" alt="Панорама Москвы из отеля">
+              <figcaption class="caption">панорама · окна в пол</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: 4deg">
+              <img src="https://images.unsplash.com/photo-1669793705868-14f2e3ef8d84?w=700&q=80" alt="Городской свет Москвы">
+              <figcaption class="caption">черная машина · вечерний город</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: -3deg">
+              <img src="https://images.unsplash.com/photo-1762242376052-d82f0bea4dfd?w=700&q=80" alt="Люксовый интерьер">
+              <figcaption class="caption">мрамор · халат · спа</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: 2deg">
+              <img src="https://images.unsplash.com/photo-1659201380138-4ecf5b32ce85?w=700&q=80" alt="Город и путешествие">
+              <figcaption class="caption">шампанское на завтрак</figcaption>
+            </figure>
+            <div class="stamp">Городской побег</div>
+            <div class="note"><strong>Деталь</strong>поздний выезд, тихий спа, ресторан после заката</div>
+            <div class="boarding"><span><strong>MOW</strong>люксовый уикенд</span><span>24 ч</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #ff6b6b; --board-bg: #fff3eb" data-accent="#ff6b6b" aria-label="Moodboard: Турция">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 03</div>
+            <h2>Турция: лёгкий люкс</h2>
+            <p>Теплая свобода: яхта, закат, апельсины и ужин при свечах.</p>
+            <div class="board-meta">
+              <span class="meta-chip">36.8969° N, 30.7133° E</span>
+              <span class="meta-chip">+27° · закат</span>
+              <span class="meta-chip">пляжный клуб</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: 1deg">
+              <img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=1400&q=82" alt="Закат у воды в Турции">
+              <figcaption class="caption">ужин на закате · Средиземное море</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: -5deg">
+              <img src="https://images.unsplash.com/photo-1706349441547-baac3bd220a5?w=700&q=80" alt="Турецкий берег">
+              <figcaption class="caption">яхта · соленый воздух</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: 4deg">
+              <img src="https://images.unsplash.com/photo-1754658531993-66add0b893c4?w=700&q=80" alt="Теплый вечер в Турции">
+              <figcaption class="caption">лён · свечи · золото</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=700&q=80" alt="Полет над водой">
+              <figcaption class="caption">шары Каппадокии · рассвет</figcaption>
+            </figure>
+            <div class="stamp">Тёплая свобода</div>
+            <div class="note"><strong>Палитра</strong>терракота, оранжевый закат, синий океан, золото</div>
+            <div class="boarding"><span><strong>AYT</strong>уикенд у моря</span><span>3 ч 40 мин</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #0066ff; --board-bg: #eef2f1" data-accent="#0066ff" aria-label="Moodboard: Россия">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 04</div>
+            <h2>Россия: путь</h2>
+            <p>Дорога со смыслом: поезд, чай, лес и северный свет за окном.</p>
+            <div class="board-meta">
+              <span class="meta-chip">маршрут · 3 города</span>
+              <span class="meta-chip">ночной поезд</span>
+              <span class="meta-chip">янтарный свет</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=1400&q=82" alt="Поезд на фоне природы">
+              <figcaption class="caption">поезд · старые станции · открытие</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: 3deg">
+              <img src="https://images.unsplash.com/photo-1705775299869-600da44da8ff?w=700&q=80" alt="Деталь поездки по России">
+              <figcaption class="caption">чай в дороге</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: -4deg">
+              <img src="https://images.unsplash.com/photo-1691583224443-1fefd0afaa51?w=700&q=80" alt="Российская природа">
+              <figcaption class="caption">лес · снег · северный воздух</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: 2deg">
+              <img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Окно и тихий интерьер">
+              <figcaption class="caption">винтажный блокнот</figcaption>
+            </figure>
+            <div class="stamp">Путешествие</div>
+            <div class="note"><strong>Маршрут</strong>город, дорога, природа, ужин в новом месте</div>
+            <div class="boarding"><span><strong>RUS</strong>маршрут открытий</span><span>уикенд</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #ff6b6b; --board-bg: #fbf0df" data-accent="#ff6b6b" aria-label="Moodboard: Узбекистан">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 05</div>
+            <h2>Узбекистан: сон</h2>
+            <p>Арки, мозаика, чай, ткани и золотые тени на закатных улицах.</p>
+            <div class="board-meta">
+              <span class="meta-chip">39.6542° N, 66.9597° E</span>
+              <span class="meta-chip">золотой час</span>
+              <span class="meta-chip">Самарканд</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: 1deg">
+              <img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=1400&q=82" alt="Восточная мозаика и орнаменты">
+              <figcaption class="caption">мозаика · арки · глубокий синий</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: -3deg">
+              <img src="https://images.unsplash.com/photo-1630245935603-a409cfaa97e4?w=700&q=80" alt="Архитектура Узбекистана">
+              <figcaption class="caption">чай · рынок · ткани</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: 4deg">
+              <img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Орнаментальная деталь">
+              <figcaption class="caption">золотые орнаменты</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: -2deg">
+              <img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Закатный теплый свет">
+              <figcaption class="caption">тени · закат · улицы</figcaption>
+            </figure>
+            <div class="stamp">Восточный сон</div>
+            <div class="note"><strong>Фокус</strong>не туристический маршрут, а восточная сказка в деталях</div>
+            <div class="boarding"><span><strong>SKD</strong>настроение Шёлкового пути</span><span>4 ч</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard moodboard-dark" style="--accent: #00c896; --board-bg: #161327" data-accent="#00c896" aria-label="Moodboard: Тай и Вьетнам">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 06</div>
+            <h2>Тай / Вьетнам: неон</h2>
+            <p>Свобода, шум, тропический дождь, скутеры и коктейли на крыше.</p>
+            <div class="board-meta">
+              <span class="meta-chip">ночной рынок</span>
+              <span class="meta-chip">+29° · дождь</span>
+              <span class="meta-chip">бар на крыше</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=1400&q=82" alt="Неоновая улица в Азии">
+              <figcaption class="caption">неон · китайский квартал · ночная энергия</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: 4deg">
+              <img src="https://images.unsplash.com/photo-1549375463-8cbc18ca3f24?w=700&q=80" alt="Тропическая улица">
+              <figcaption class="caption">скутеры · уличная еда</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: -3deg">
+              <img src="https://images.unsplash.com/photo-1774703699594-24267a0db2fe?w=700&q=80" alt="Пляжная атмосфера Азии">
+              <figcaption class="caption">пальмы · теплое море</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: 2deg">
+              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Городская панорама вечером">
+              <figcaption class="caption">коктейли на крыше</figcaption>
+            </figure>
+            <div class="stamp">Неоновое приключение</div>
+            <div class="note"><strong>Энергия</strong>хаос, свобода, теплый дождь и город, который не спит</div>
+            <div class="boarding"><span><strong>BKK</strong>ночной рейс</span><span>9 ч</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard" style="--accent: #00c896; --board-bg: #f4efe6" data-accent="#00c896" aria-label="Moodboard: Подмосковье">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 07</div>
+            <h2>Подмосковье: перезагрузка</h2>
+            <p>Тишина, лес, баня, книги, чай и дождь за панорамным окном.</p>
+            <div class="board-meta">
+              <span class="meta-chip">без перелетов</span>
+              <span class="meta-chip">чан · 22:00</span>
+              <span class="meta-chip">лесной воздух</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: 1deg">
+              <img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=1400&q=82" alt="Дом с панорамным окном среди зелени">
+              <figcaption class="caption">панорамное окно · лес · тишина</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: -4deg">
+              <img src="https://images.unsplash.com/photo-1769256050030-e30bfc946d83?w=700&q=80" alt="Минималистичный интерьер">
+              <figcaption class="caption">дерево · минимализм</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: 3deg">
+              <img src="https://images.unsplash.com/photo-1773994788518-31be9cf58f3c?w=700&q=80" alt="Уютный эко-отель">
+              <figcaption class="caption">баня · чан · свечи</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Природа и тихий дом">
+              <figcaption class="caption">чайный ритуал · книги</figcaption>
+            </figure>
+            <div class="stamp">Тихий люкс</div>
+            <div class="note"><strong>Ритм</strong>медленно, тихо, без аэропорта и без расписания</div>
+            <div class="boarding"><span><strong>MO</strong>лесная перезагрузка</span><span>1 ч в пути</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide moodboard moodboard-dark" style="--accent: #ff6b6b; --board-bg: #171316" data-accent="#ff6b6b" aria-label="Moodboard: Вечеринка в особняке">
+        <div class="moodboard-inner">
+          <div class="board-title">
+            <div class="category">Мудборд 08</div>
+            <h2>Вечеринка в особняке</h2>
+            <p>Энергия главной роли: длинный стол, музыка, серебро, свечи и танцы до ночи.</p>
+            <div class="board-meta">
+              <span class="meta-chip">Москва · 20:00</span>
+              <span class="meta-chip">дресс-код</span>
+              <span class="meta-chip">диджей-сет</span>
+            </div>
+          </div>
+          <div class="board-canvas">
+            <figure class="board-photo hero" style="--r: -1deg">
+              <img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=1400&q=82" alt="Вечеринка у особняка">
+              <figcaption class="caption">особняк · гирлянды · силуэты</figcaption>
+            </figure>
+            <figure class="board-photo detail-a" style="--r: 4deg">
+              <img src="https://images.unsplash.com/photo-1672189448776-28d8bea275bf?w=700&q=80" alt="Атмосфера вечеринки">
+              <figcaption class="caption">длинный стол · свечи</figcaption>
+            </figure>
+            <figure class="board-photo detail-b" style="--r: -3deg">
+              <img src="https://images.unsplash.com/photo-1764269719300-7094d6c00533?w=700&q=80" alt="Свет и танцы">
+              <figcaption class="caption">диджей · диско-свет</figcaption>
+            </figure>
+            <figure class="board-photo detail-c" style="--r: 2deg">
+              <img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Вечерний люкс">
+              <figcaption class="caption">башня из шампанского · красный бархат</figcaption>
+            </figure>
+            <div class="stamp">Запомнить ночь</div>
+            <div class="note"><strong>Кадр</strong>друзья не позируют, свет движется, вечер выглядит как фильм</div>
+            <div class="boarding"><span><strong>MSK</strong>частный особняк</span><span>всю ночь</span></div>
+            <span class="tape one"></span>
+            <span class="tape two"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide final" data-accent="#0066ff" aria-label="Финальный слайд">
+        <img class="final-image" src="https://images.unsplash.com/photo-1722942846327-98b067cc8ee0?w=1920&q=80" alt="Самолет над водой">
+        <div class="final-content">
+          <div class="eyebrow">Посадочный на новый сценарий</div>
+          <h2>Какой сценарий станет историей?</h2>
+          <p>Горы, спа, море, город, восточная сказка или вечеринка мечты — осталось выбрать настроение.</p>
+          <div class="mood-row">
+            <span class="mood-pill">посадочный талон</span>
+            <span class="mood-pill">стикеры из путешествий</span>
+            <span class="mood-pill">полароидные воспоминания</span>
+            <span class="mood-pill">30-летие</span>
+          </div>
+        </div>
+        <div class="polaroids" aria-hidden="true">
+          <div class="polaroid" style="--rotate: -7deg"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: 5deg"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: 4deg"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=500&q=80" alt=""></div>
+          <div class="polaroid" style="--rotate: -5deg"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=500&q=80" alt=""></div>
+        </div>
+      </section>
+
+      <section class="slide choice" data-accent="#0066ff" aria-label="Выбор сценария">
+        <div class="choice-inner">
+          <div class="choice-header">
+            <div>
+              <div class="category" style="--accent: #0066ff">Финальный выбор</div>
+              <h2>Какой сценарий выбираем?</h2>
+            </div>
+            <p>Все варианты уже собраны как curated birthday experience. Осталось выбрать настроение, бюджет и дату.</p>
+          </div>
+          <div class="choice-grid">
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1660038441533-2779866bb28c?w=700&q=80" alt="Грузия"><span>Эко-отель в Грузии</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1755805870773-79e68ea6f8e8?w=700&q=80" alt="Москва"><span>Москва + спа</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1714336020656-ea7f480c80e1?w=700&q=80" alt="Турция"><span>Турция</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1705775287847-76a8c26caa58?w=700&q=80" alt="Россия"><span>Поездка по России</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1741251633304-d1e1c20e2691?w=700&q=80" alt="Узбекистан"><span>Узбекистан</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1687738289637-7b86cee82d26?w=700&q=80" alt="Тай и Вьетнам"><span>Тай / Вьетнам</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1774280954999-9758f11f3d41?w=700&q=80" alt="Подмосковье"><span>Эко-отель в Подмосковье</span></article>
+            <article class="choice-card"><img src="https://images.unsplash.com/photo-1576000328195-d4ea94fc737e?w=700&q=80" alt="Тематическая вечеринка"><span>Тематическая вечеринка</span></article>
+          </div>
+          <div class="choice-footer">
+            <strong>Следующий шаг: выбрать топ-2 сценария</strong>
+            <span>После этого можно сравнить даты, логистику, бюджет и доступность мест.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <button class="nav prev" type="button" aria-label="Предыдущий слайд" id="prev">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="nav next" type="button" aria-label="Следующий слайд" id="next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="counter" id="counter">01 / 11</div>
+    <div class="dots" id="dots" aria-label="Навигация по слайдам"></div>
+  </main>
+
+  <script>
+    const deck = document.querySelector('.deck');
+    const track = document.getElementById('track');
+    const slides = Array.from(document.querySelectorAll('.slide:not(.moodboard)'));
+    const dots = document.getElementById('dots');
+    const counter = document.getElementById('counter');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let current = 0;
+
+    slides.forEach((slide, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'dot';
+      button.setAttribute('aria-label', `Перейти к слайду ${index + 1}`);
+      button.addEventListener('click', () => goTo(index));
+      dots.appendChild(button);
+    });
+
+    const dotButtons = Array.from(dots.children);
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(${-current * 100}%)`;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === current);
+      });
+
+      dotButtons.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === current);
+      });
+
+      const accent = slides[current].dataset.accent || '#0066ff';
+      deck.classList.toggle('dark-ui', slides[current].classList.contains('cover') || slides[current].classList.contains('final'));
+      document.documentElement.style.setProperty('--active', accent);
+      counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    }
+
+    prev.addEventListener('click', () => goTo(current - 1));
+    next.addEventListener('click', () => goTo(current + 1));
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+        event.preventDefault();
+        goTo(current + 1);
+      }
+
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault();
+        goTo(current - 1);
+      }
+
+      if (event.key === 'Home') {
+        event.preventDefault();
+        goTo(0);
+      }
+
+      if (event.key === 'End') {
+        event.preventDefault();
+        goTo(slides.length - 1);
+      }
+    });
+
+    let touchStartX = 0;
+    window.addEventListener('touchstart', (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    window.addEventListener('touchend', (event) => {
+      const delta = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 48) {
+        goTo(current + (delta < 0 ? 1 : -1));
+      }
+    }, { passive: true });
+
+    goTo(0);
+  </script>
+</body>
+</html>
